@@ -6,37 +6,37 @@ const Review = () => {
   const [reviewIndex, setReviewIndex] = useState(0);
   const { id, name, job, image, text } = people[reviewIndex];
 
-  //   const nextReview = () => {
-  //     if (0 <= reviewIndex < 3) {
-  //       setReviewIndex(reviewIndex + 1);
-  //     } else if (reviewIndex >= 3) {
-  //       setReviewIndex(0);
-  //     }
-  //   };
+  const checkNumber = (newIndex) => {
+    if (newIndex > people.length - 1) {
+      return 0;
+    } else if (newIndex < 0) {
+      return people.length - 1;
+    } else {
+      return newIndex;
+    }
+  };
 
   const nextReview = () => {
     setReviewIndex((index) => {
-      if (index === people.length - 1) {
-        return 0;
-      } else {
-        return index + 1;
-      }
+      let newIndex = index + 1;
+      return checkNumber(newIndex);
     });
   };
 
   const prevReview = () => {
     setReviewIndex((index) => {
-      if (index === 0) {
-        return people.length - 1;
-      } else {
-        return index - 1;
-      }
+      let newIndex = index - 1;
+      return checkNumber(newIndex);
     });
   };
 
   const randomReview = () => {
-    const randomNumber = Math.floor(Math.random() * 4); // Generates random number between 0-3;
-    setReviewIndex(randomNumber);
+    let randomNumber = Math.floor(Math.random() * people.length); // Generates random number between 0-3;
+    // Ensure random number isn't the same as the existing index
+    if (randomNumber === reviewIndex) {
+      randomNumber = reviewIndex + 1;
+    }
+    setReviewIndex(checkNumber(randomNumber));
   };
 
   return (
