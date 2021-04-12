@@ -155,12 +155,31 @@ section {
   border: none;
   border-radius: 1rem;
   font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.leftIcon {
+.previousIcon {
   margin-right: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: rgb(119, 162, 242);
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
-.rightIcon {
+.nextIcon {
   margin-left: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: rgb(119, 162, 242);
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
