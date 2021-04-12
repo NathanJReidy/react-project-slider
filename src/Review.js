@@ -3,10 +3,41 @@ import people from "./data";
 import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
 
 const Review = () => {
-  const [reviewNumber, setReviewNumber] = useState(0);
-  const [review, setReview] = useState(people[reviewNumber]);
-  console.log(review);
-  const { id, image, job, name, text } = review;
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const { id, name, job, image, text } = people[reviewIndex];
+
+  //   const nextReview = () => {
+  //     if (0 <= reviewIndex < 3) {
+  //       setReviewIndex(reviewIndex + 1);
+  //     } else if (reviewIndex >= 3) {
+  //       setReviewIndex(0);
+  //     }
+  //   };
+
+  const nextReview = () => {
+    setReviewIndex((index) => {
+      if (index === people.length - 1) {
+        return 0;
+      } else {
+        return index + 1;
+      }
+    });
+  };
+
+  const prevReview = () => {
+    setReviewIndex((index) => {
+      if (index === 0) {
+        return people.length - 1;
+      } else {
+        return index - 1;
+      }
+    });
+  };
+
+  const randomReview = () => {
+    const randomNumber = Math.floor(Math.random() * 4); // Generates random number between 0-3;
+    setReviewIndex(randomNumber);
+  };
 
   return (
     <article className="review">
@@ -15,28 +46,12 @@ const Review = () => {
       <p className="role">{job}</p>
       <p className="desc">{text}</p>
       <div className="btnContainer">
-        <button
-          className="previousIcon"
-          onClick={() => {
-            setReview(people[reviewNumber - 1]);
-            setReviewNumber(reviewNumber - 1);
-          }}
-        >
-          {" "}
-          <FaChevronLeft />{" "}
-        </button>
-        <button
-          className="nextIcon"
-          onClick={() => {
-            setReview(people[reviewNumber + 1]);
-            setReviewNumber(reviewNumber + 1);
-          }}
-        >
-          {" "}
-          <FaChevronRight />{" "}
-        </button>
+        <FaChevronLeft className="previousIcon" onClick={prevReview} />
+        <FaChevronRight className="nextIcon" onClick={nextReview} />
       </div>
-      <button className="surpriseBtn">Surprise Me</button>
+      <button className="surpriseBtn" onClick={randomReview}>
+        Surprise Me
+      </button>
     </article>
   );
 };

@@ -139,6 +139,7 @@ section {
 
 .desc {
   color: gray;
+  text-align: center;
 }
 
 .btnContainer {
@@ -171,6 +172,7 @@ section {
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: 1.5rem;
 }
 
 .nextIcon {
@@ -182,4 +184,5 @@ section {
   border: none;
   outline: none;
   cursor: pointer;
+  font-size: 1.5rem;
 }
