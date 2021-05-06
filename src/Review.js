@@ -42,20 +42,28 @@ const Review = () => {
 
   return (
     <div className="mainContainer">
-      <button className="arrowBtn">
-        <FiChevronLeft className="previousIcon" onClick={prevReview} />
+      <button className="arrowBtnLeft">
+        <FiChevronLeft
+          className="previousIcon"
+          onClick={prevReview}
+          size={24}
+          style={{ color: "white", margin: 0 }}
+        />
       </button>
       <article className="review">
         <img className="img" src={image}></img>
         <h4 className="name">{name}</h4>
         <p className="role">{job}</p>
         <p className="desc">{text}</p>
-        <button className="surpriseBtn" onClick={randomReview}>
-          Surprise Me
-        </button>
+        <FaQuoteRight size={48} style={{ color: "#ba5d2c", margin: 0 }} />
       </article>
-      <button>
-        <FiChevronRight className="nextIcon" onClick={nextReview} />
+      <button className="arrowBtnRight">
+        <FiChevronRight
+          className="nextIcon"
+          onClick={nextReview}
+          size={24}
+          style={{ color: "white", margin: 0 }}
+        />
       </button>
     </div>
   );
