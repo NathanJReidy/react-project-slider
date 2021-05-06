@@ -5,7 +5,7 @@ function App() {
   return (
     <main>
       <section className="container">
-        <h2 className="title">Our Reviews</h2>
+        <h2 className="title">Reviews</h2>
         <Review />
       </section>
     </main>

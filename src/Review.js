@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import people from "./data";
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from "react-icons/fa";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import { FaQuoteRight } from "react-icons/fa";
 
 const Review = () => {
   const [reviewIndex, setReviewIndex] = useState(0);
@@ -40,19 +41,23 @@ const Review = () => {
   };
 
   return (
-    <article className="review">
-      <img className="img" src={image}></img>
-      <h4>{name}</h4>
-      <p className="role">{job}</p>
-      <p className="desc">{text}</p>
-      <div className="btnContainer">
-        <FaChevronLeft className="previousIcon" onClick={prevReview} />
-        <FaChevronRight className="nextIcon" onClick={nextReview} />
-      </div>
-      <button className="surpriseBtn" onClick={randomReview}>
-        Surprise Me
+    <div className="mainContainer">
+      <button className="arrowBtn">
+        <FiChevronLeft className="previousIcon" onClick={prevReview} />
       </button>
-    </article>
+      <article className="review">
+        <img className="img" src={image}></img>
+        <h4 className="name">{name}</h4>
+        <p className="role">{job}</p>
+        <p className="desc">{text}</p>
+        <button className="surpriseBtn" onClick={randomReview}>
+          Surprise Me
+        </button>
+      </article>
+      <button>
+        <FiChevronRight className="nextIcon" onClick={nextReview} />
+      </button>
+    </div>
   );
 };
 

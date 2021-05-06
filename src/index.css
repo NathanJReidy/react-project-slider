@@ -132,9 +132,12 @@ section {
     var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.name {
+  color: #ba5d2c;
+}
+
 .role {
   text-transform: uppercase;
-  color: rgb(119, 162, 242);
 }
 
 .desc {
@@ -185,4 +188,18 @@ section {
   outline: none;
   cursor: pointer;
   font-size: 1.5rem;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.arrowBtn {
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
 }
