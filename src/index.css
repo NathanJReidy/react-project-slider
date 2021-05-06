@@ -103,20 +103,34 @@ section {
 }
 
 .title {
-  margin-bottom: 4rem;
+  margin-bottom: 0rem;
 }
 
-.review {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+@media screen and (min-width: 800px) {
+  .title {
+    margin-bottom: 4rem;
+  }
+}
+
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  border-radius: 1.5rem;
-  background: none;
-  border: none;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+article.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide {
+  transform: translateX(-100%);
+}
+article.nextSlide {
+  transform: translateX(100%);
 }
 
 .img {
@@ -189,15 +203,20 @@ section {
 }
 
 .mainContainer {
+  margin: 0 auto;
+  margin-top: 4rem;
+  width: 100%;
+  height: 450px;
+  text-align: center;
+  position: relative;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  overflow: hidden;
 }
 
 .arrowBtnLeft {
   position: absolute;
   top: 45%;
-  left: 20%;
+  left: 12%;
   height: 2rem;
   justify-content: center;
   align-items: center;
@@ -211,7 +230,7 @@ section {
 .arrowBtnRight {
   position: absolute;
   top: 45%;
-  right: 20%;
+  right: 12%;
   height: 2rem;
   justify-content: center;
   align-items: center;
