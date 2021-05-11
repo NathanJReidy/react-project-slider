@@ -225,6 +225,8 @@ article.nextSlide {
   outline: none;
   border: none;
   border-radius: 0.375rem;
+  cursor: pointer;
+  z-index: 50;
 }
 
 .arrowBtnRight {
@@ -239,4 +241,6 @@ article.nextSlide {
   outline: none;
   border: none;
   border-radius: 0.375rem;
+  cursor: pointer;
+  z-index: 50;
 }
